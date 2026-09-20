@@ -1,0 +1,10 @@
+D:\Myapp01\notas\notas\bin\Debug\notas.exe.config
+D:\Myapp01\notas\notas\bin\Debug\notas.exe
+D:\Myapp01\notas\notas\bin\Debug\notas.pdb
+D:\Myapp01\notas\notas\obj\Debug\notas.csproj.AssemblyReference.cache
+D:\Myapp01\notas\notas\obj\Debug\notas.Form1.resources
+D:\Myapp01\notas\notas\obj\Debug\notas.Properties.Resources.resources
+D:\Myapp01\notas\notas\obj\Debug\notas.csproj.GenerateResource.cache
+D:\Myapp01\notas\notas\obj\Debug\notas.csproj.CoreCompileInputs.cache
+D:\Myapp01\notas\notas\obj\Debug\notas.exe
+D:\Myapp01\notas\notas\obj\Debug\notas.pdb
