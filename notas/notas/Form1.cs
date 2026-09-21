@@ -13,12 +13,14 @@ namespace notas
 {
     public partial class Form1 : Form
     {
+        int contador = 0;
         bool save = false;
         string path;
 
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,8 +28,7 @@ namespace notas
             rctTexto.Clear();
             rctTexto.Focus();
             path = "";
-            save = false;
-            //guardarToolStripMenuItem.Enabled = true; Se puede omitir por el textchange
+            
         }
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,6 +59,12 @@ namespace notas
 
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            guardadoGeneral();
+        }
+
+        private void guardadoGeneral()
+        {
+
             if (sfdGuardar.ShowDialog() == DialogResult.OK)
             {
                 path = sfdGuardar.FileName;
@@ -70,7 +77,21 @@ namespace notas
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
+
+        private void tmrGuardar_Tick(object sender, EventArgs e)
+        {
+            if (save && !string.IsNullOrEmpty(path))
+            {
+                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+                toolStripStatusLabel1.Text = "Autoguardado: " + DateTime.Now.ToString("HH:mm:ss") + " en " + path;
+            }
+            else
+            {
+                toolStripStatusLabel1.Text = "Documento no guardado aún (autoguardado en espera)";
+            }
+        }
+
     }
 }
+
